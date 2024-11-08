@@ -95,6 +95,9 @@ function seleccionarPalabraAleatoria() {
 function mostrarInterfazJuego() {
   const equipoEnTurno = equipos[turnoActual];
 
+  // Cambiar el color de fondo según el equipo en turno
+  cambiarColorDeFondo(equipoEnTurno);
+
   app.innerHTML = `
         <div class="text-center">
             <h2 class="text-5xl font-bold mb-4">Turno de: ${
@@ -461,6 +464,19 @@ function mostrarResumen() {
   resumenContenido += `<p class="text-3xl mt-4">Preguntas restantes: ${palabrasRestantes.length}</p>`;
 
   mostrarModal(resumenContenido);
+}
+
+// Nueva función para cambiar el color de fondo
+function cambiarColorDeFondo(equipo) {
+  // Remover clases de fondo anteriores
+  body.classList.remove("bg-blue-200", "bg-green-200");
+
+  // Asignar un color de fondo dependiendo del equipo
+  if (turnoActual === 0) {
+    body.classList.add("bg-blue-200"); // Color para el Equipo 1
+  } else if (turnoActual === 1) {
+    body.classList.add("bg-green-200"); // Color para el Equipo 2
+  }
 }
 
 // Iniciar el juego al cargar la página
