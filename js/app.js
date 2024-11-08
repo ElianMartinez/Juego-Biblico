@@ -13,6 +13,7 @@ let pistasMostradas = [];
 // Elementos del DOM
 const app = document.getElementById("app");
 const modalContainer = document.getElementById("modalContainer");
+const body = document.getElementById("body"); // Referencia al body
 
 // Función para iniciar el juego
 function iniciarJuego() {
@@ -300,7 +301,7 @@ function revelarLetra() {
 
 // Función para permitir al jugador decir una letra y verificar si está en la palabra
 function decirLetra() {
-  const letraIngresada = prompt("Ingresa una letra:").toLowerCase();
+  const letraIngresada = prompt("Ingresa una letra:");
 
   if (!letraIngresada || letraIngresada.length !== 1) {
     mostrarModal(
@@ -321,29 +322,44 @@ function decirLetra() {
     );
   } else {
     intentosRestantes--;
-    verificarFinDeRonda();
     mostrarModal(
       `<p class="text-5xl font-bold">La letra "${letra.toUpperCase()}" no está en la palabra.</p>`,
-      true
+      true,
+      function () {
+        verificarFinDeRonda();
+      }
     );
   }
 }
 
 // Función para mostrar un modal
-function mostrarModal(contenido, autoCerrar = false) {
+function mostrarModal(contenido, autoCerrar = false, callback = null) {
   modalContainer.innerHTML = `
         <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div class="bg-white text-gray-800 rounded-lg p-8 max-w-2xl mx-auto relative">
                 ${contenido}
-                <button onclick="cerrarModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-4xl font-bold">&times;</button>
+                <button id="closeModalButton" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-4xl font-bold">&times;</button>
             </div>
         </div>
     `;
 
+  function closeModal() {
+    cerrarModal();
+    if (callback) {
+      callback();
+    }
+  }
+
   if (autoCerrar) {
     setTimeout(() => {
-      cerrarModal();
+      closeModal();
     }, 5000); // Cierra el modal después de 5 segundos
+  }
+
+  // Asociar el botón de cerrar modal con la función closeModal
+  const closeButton = document.getElementById("closeModalButton");
+  if (closeButton) {
+    closeButton.onclick = closeModal;
   }
 }
 
@@ -354,24 +370,30 @@ function cerrarModal() {
 
 // Función para adivinar la palabra completa
 function adivinarPalabra() {
-  const respuesta = prompt("Ingresa la palabra completa:").toLowerCase();
+  const respuesta = prompt("Ingresa la palabra completa:");
 
-  if (respuesta === palabraActual.word) {
+  if (!respuesta) return;
+
+  if (respuesta.toLowerCase() === palabraActual.word) {
     mostrarModal(
       '<p class="text-5xl font-bold">¡Correcto! Has adivinado la palabra.</p>',
-      true
+      true,
+      function () {
+        equipos[turnoActual].puntaje += palabraActual.difficulty.basePoints;
+        actualizarPuntaje();
+        cambiarTurno();
+        siguienteRonda();
+      }
     );
-    equipos[turnoActual].puntaje += palabraActual.difficulty.basePoints;
-    actualizarPuntaje();
-    cambiarTurno();
-    siguienteRonda();
   } else {
     mostrarModal(
       '<p class="text-5xl font-bold">Incorrecto. Continúa el juego.</p>',
-      true
+      true,
+      function () {
+        intentosRestantes--;
+        verificarFinDeRonda();
+      }
     );
-    intentosRestantes--;
-    verificarFinDeRonda();
   }
 }
 
@@ -380,10 +402,12 @@ function verificarFinDeRonda() {
   if (intentosRestantes <= 0) {
     mostrarModal(
       `<p class="text-5xl font-bold">Se acabaron los intentos.<br>La palabra era: ${palabraActual.word.toUpperCase()}</p>`,
-      true
+      true,
+      function () {
+        cambiarTurno();
+        siguienteRonda();
+      }
     );
-    cambiarTurno();
-    siguienteRonda();
   } else {
     cambiarTurno();
     mostrarInterfazJuego();
@@ -432,22 +456,26 @@ function reiniciarJuego() {
 function marcarComoPerdida() {
   mostrarModal(
     `<p class="text-5xl font-bold">Se ha marcado la ronda como perdida.<br>La palabra era: ${palabraActual.word.toUpperCase()}</p>`,
-    true
+    true,
+    function () {
+      cambiarTurno();
+      siguienteRonda();
+    }
   );
-  cambiarTurno();
-  siguienteRonda();
 }
 
 // Función para marcar la ronda como ganada manualmente
 function marcarComoGanada() {
   mostrarModal(
     '<p class="text-5xl font-bold">¡Has marcado la ronda como ganada!</p>',
-    true
+    true,
+    function () {
+      equipos[turnoActual].puntaje += palabraActual.difficulty.basePoints;
+      actualizarPuntaje();
+      cambiarTurno();
+      siguienteRonda();
+    }
   );
-  equipos[turnoActual].puntaje += palabraActual.difficulty.basePoints;
-  actualizarPuntaje();
-  cambiarTurno();
-  siguienteRonda();
 }
 
 // Función para mostrar el resumen del juego
