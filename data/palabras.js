@@ -2,16 +2,17 @@ const palabras = [
   {
     id: 1,
     word: "noe",
-    generalPhrase: "Personaje bíblico conocido por construir algo muy grande.",
+    generalPhrase:
+      "Un hombre elegido para preservar la esperanza en medio del juicio",
     lettersVisible: [{ position: 1, letter: "o" }],
     length: 3,
     maxAttempts: 5,
     category: "easy",
     type: "personaje",
     hints: [
-      "Construyó un arca",
-      "Sobrevivió a un diluvio",
-      "Padre de Sem, Cam y Jafet",
+      "Encontró gracia ante los ojos de Dios",
+      "Su nombre significa 'descanso'",
+      "Un proyecto de 120 años",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 2 },
@@ -26,16 +27,17 @@ const palabras = [
   {
     id: 2,
     word: "fe",
-    generalPhrase: "Concepto fundamental en muchas religiones.",
+    generalPhrase:
+      "La sustancia de lo que se espera, la evidencia de lo invisible",
     lettersVisible: [{ position: 0, letter: "f" }],
     length: 2,
     maxAttempts: 5,
     category: "easy",
     type: "concepto",
     hints: [
-      "Creencia en lo que no se ve",
-      "Es necesaria para agradar a Dios",
-      "Se compara con un grano de mostaza",
+      "Sin ella es imposible agradar al Altísimo",
+      "Más pequeña que una semilla",
+      "Por ella caminaron sobre el mar",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 1 },
@@ -49,16 +51,17 @@ const palabras = [
   {
     id: 3,
     word: "amor",
-    generalPhrase: "Sentimiento poderoso mencionado en muchos textos sagrados.",
+    generalPhrase:
+      "La fuerza más poderosa del universo, descrita en un himno a los corintios",
     lettersVisible: [{ position: 1, letter: "m" }],
     length: 4,
     maxAttempts: 5,
     category: "easy",
     type: "concepto",
     hints: [
-      "Dios es _____",
-      "El más grande de todos",
-      "Cubre multitud de pecados",
+      "Nunca deja de ser",
+      "Mayor que la esperanza",
+      "Más fuerte que la muerte",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 2 },
@@ -72,16 +75,16 @@ const palabras = [
   {
     id: 4,
     word: "paz",
-    generalPhrase: "Estado deseado entre naciones y personas.",
+    generalPhrase: "Un regalo que el mundo no puede dar ni quitar",
     lettersVisible: [{ position: 1, letter: "a" }],
     length: 3,
     maxAttempts: 5,
     category: "easy",
     type: "concepto",
     hints: [
-      "Jesús es el príncipe de ___",
-      "Ausencia de conflicto",
-      "Se desea en las bendiciones",
+      "Sobrepasa todo entendimiento",
+      "Un fruto del Espíritu",
+      "Se encuentra en medio de la tormenta",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 1 },
@@ -95,13 +98,17 @@ const palabras = [
   {
     id: 5,
     word: "david",
-    generalPhrase: "Rey conocido por su valentía y sus salmos.",
+    generalPhrase: "Un corazón conforme a lo divino, en un hombre imperfecto",
     lettersVisible: [{ position: 2, letter: "v" }],
     length: 5,
     maxAttempts: 5,
     category: "easy",
     type: "personaje",
-    hints: ["Venció a Goliat", "Escribió muchos salmos", "Padre de Salomón"],
+    hints: [
+      "El menor de ocho hermanos",
+      "Músico en la corte real",
+      "De pastor a monarca",
+    ],
     availableBenefits: [
       { type: "decirLetra", quantity: 2 },
       { type: "pistaAdicional", quantity: 2 },
@@ -114,7 +121,8 @@ const palabras = [
   {
     id: 6,
     word: "salomon",
-    generalPhrase: "Rey famoso por su sabiduría.",
+    generalPhrase:
+      "Bendecido con un don especial que luego se convirtió en su prueba",
     lettersVisible: [
       { position: 0, letter: "s" },
       { position: 4, letter: "m" },
@@ -124,9 +132,9 @@ const palabras = [
     category: "medium",
     type: "personaje",
     hints: [
-      "Hijo de David",
-      "Construyó el primer templo",
-      "Escribió Proverbios",
+      "Su reino fue de paz total",
+      "Autor de tres mil proverbios",
+      "La reina del sur lo visitó",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -141,7 +149,8 @@ const palabras = [
   {
     id: 7,
     word: "golgota",
-    generalPhrase: "Lugar significativo en la crucifixión.",
+    generalPhrase:
+      "Una colina fuera de la ciudad que cambió la historia para siempre",
     lettersVisible: [
       { position: 2, letter: "l" },
       { position: 6, letter: "a" },
@@ -151,9 +160,9 @@ const palabras = [
     category: "medium",
     type: "lugar",
     hints: [
-      "Significa 'Lugar de la Calavera'",
-      "Donde Jesús fue crucificado",
-      "También conocido como Calvario",
+      "Su forma recordaba a un cráneo",
+      "Cerca de un huerto y una tumba nueva",
+      "Lugar de tres cruces",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -168,7 +177,8 @@ const palabras = [
   {
     id: 8,
     word: "jerusalen",
-    generalPhrase: "Ciudad importante en la historia bíblica.",
+    generalPhrase:
+      "Ciudad donde se entrelazan tierra y cielo, centro de tres religiones",
     lettersVisible: [
       { position: 1, letter: "e" },
       { position: 5, letter: "a" },
@@ -177,7 +187,11 @@ const palabras = [
     maxAttempts: 7,
     category: "medium",
     type: "lugar",
-    hints: ["Ciudad de paz", "Capital de Israel", "Lugar del Templo"],
+    hints: [
+      "Antes conocida como Salem",
+      "Construida sobre siete colinas",
+      "Ciudad del Gran Rey",
+    ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
       { type: "pistaAdicional", quantity: 2 },
@@ -191,7 +205,8 @@ const palabras = [
   {
     id: 9,
     word: "apocalipsis",
-    generalPhrase: "Último libro del Nuevo Testamento.",
+    generalPhrase:
+      "Un mensaje codificado de esperanza en tiempos de persecución",
     lettersVisible: [
       { position: 0, letter: "a" },
       { position: 5, letter: "l" },
@@ -202,9 +217,9 @@ const palabras = [
     category: "medium",
     type: "libro",
     hints: [
-      "Escrito por Juan",
-      "Habla sobre el fin de los tiempos",
-      "Contiene visiones y profecías",
+      "Escrito en una isla de exilio",
+      "Menciona siete candeleros",
+      "Un rollo con siete sellos",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -219,7 +234,8 @@ const palabras = [
   {
     id: 10,
     word: "pentecostes",
-    generalPhrase: "Evento importante para el inicio de la iglesia.",
+    generalPhrase:
+      "Una fiesta agrícola que se transformó en un momento histórico",
     lettersVisible: [
       { position: 0, letter: "p" },
       { position: 4, letter: "e" },
@@ -230,9 +246,9 @@ const palabras = [
     category: "medium",
     type: "evento",
     hints: [
-      "Descenso del Espíritu Santo",
-      "Cincuenta días después de la Pascua",
-      "Los apóstoles hablaron en otras lenguas",
+      "Celebración de primicias",
+      "Sonido como de viento recio",
+      "Cumplimiento de la profecía de Joel",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -247,7 +263,7 @@ const palabras = [
   {
     id: 11,
     word: "nabucodonosor",
-    generalPhrase: "Rey que tuvo sueños interpretados por Daniel.",
+    generalPhrase: "Un poderoso que aprendió humildad de la manera más dura",
     lettersVisible: [
       { position: 1, letter: "a" },
       { position: 11, letter: "o" },
@@ -257,9 +273,9 @@ const palabras = [
     category: "hard",
     type: "personaje",
     hints: [
-      "Rey de Babilonia",
-      "Construyó jardines colgantes",
-      "Conquistó Jerusalén",
+      "Soñó con una estatua mixta",
+      "Siete tiempos sobre él pasaron",
+      "Comió hierba como buey",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -274,20 +290,20 @@ const palabras = [
   {
     id: 12,
     word: "transfiguracion",
-    generalPhrase: "Evento donde Jesús mostró su gloria a tres discípulos.",
+    generalPhrase: "Un destello de gloria divina en una montaña solitaria",
     lettersVisible: [
       { position: 0, letter: "t" },
       { position: 5, letter: "i" },
-      { position: 13, letter: "ó" },
+      { position: 13, letter: "n" },
     ],
     length: 14,
     maxAttempts: 10,
     category: "hard",
     type: "evento",
     hints: [
-      "Ocurrió en una montaña",
-      "Aparecieron Moisés y Elías",
-      "Pedro, Santiago y Juan fueron testigos",
+      "Su rostro brilló como el sol",
+      "Dos visitantes del pasado",
+      "Propuesta de tres tabernáculos",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -302,7 +318,8 @@ const palabras = [
   {
     id: 13,
     word: "eclesiastes",
-    generalPhrase: "Libro que reflexiona sobre el sentido de la vida.",
+    generalPhrase:
+      "Reflexiones de un sabio desilusionado con la vida bajo el sol",
     lettersVisible: [
       { position: 0, letter: "e" },
       { position: 5, letter: "i" },
@@ -313,9 +330,9 @@ const palabras = [
     category: "hard",
     type: "libro",
     hints: [
-      "Escrito por Salomón",
-      "Famoso por la frase 'Todo es vanidad'",
-      "Parte de los libros poéticos",
+      "Palabras del Predicador",
+      "Todo es como perseguir viento",
+      "Conclusión: teme a Dios",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -330,7 +347,7 @@ const palabras = [
   {
     id: 14,
     word: "paracletos",
-    generalPhrase: "Término griego referido a un ayudante o consolador.",
+    generalPhrase: "Un título griego que describe al defensor prometido",
     lettersVisible: [
       { position: 2, letter: "r" },
       { position: 6, letter: "t" },
@@ -340,9 +357,9 @@ const palabras = [
     category: "hard",
     type: "concepto",
     hints: [
-      "Nombre dado al Espíritu Santo",
-      "Significa 'Consolador' o 'Abogado'",
-      "Mencionado en el Evangelio de Juan",
+      "Guía a toda verdad",
+      "Otro como el que partió",
+      "El que viene después",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -357,7 +374,8 @@ const palabras = [
   {
     id: 15,
     word: "armagedon",
-    generalPhrase: "Lugar de la batalla final según el Apocalipsis.",
+    generalPhrase:
+      "Un valle histórico destinado a ser escenario del último conflicto",
     lettersVisible: [
       { position: 1, letter: "r" },
       { position: 7, letter: "o" },
@@ -367,9 +385,9 @@ const palabras = [
     category: "hard",
     type: "lugar",
     hints: [
-      "Escenario de la batalla final",
-      "También conocido como Megido",
-      "Mencionado en el último libro de la Biblia",
+      "Monte de Meguido",
+      "Testigo de antiguas batallas",
+      "Reunión de reyes del oriente",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -384,8 +402,7 @@ const palabras = [
   {
     id: 16,
     word: "melquisedec",
-    generalPhrase:
-      "Una figura misteriosa que apareció en un momento crucial de la historia patriarcal",
+    generalPhrase: "Una figura sin principio ni fin que prefigura algo mayor",
     lettersVisible: [
       { position: 0, letter: "m" },
       { position: 6, letter: "e" },
@@ -395,9 +412,9 @@ const palabras = [
     category: "hard",
     type: "personaje",
     hints: [
-      "Su nombre significa 'Rey de Justicia'",
-      "No tiene genealogía registrada",
-      "Prefiguró un sacerdocio superior",
+      "Rey de paz y justicia",
+      "Un orden sacerdotal eterno",
+      "Ofreció pan y vino al victorioso",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 4 },
@@ -413,7 +430,7 @@ const palabras = [
     id: 17,
     word: "efesios",
     generalPhrase:
-      "Un texto que revela misterios profundos sobre la identidad del pueblo de Dios",
+      "Una carta que revela el misterio oculto desde el principio de los siglos",
     lettersVisible: [
       { position: 0, letter: "e" },
       { position: 4, letter: "i" },
@@ -423,9 +440,9 @@ const palabras = [
     category: "medium",
     type: "libro",
     hints: [
-      "Ciudad famosa por su templo pagano",
-      "Habla de la armadura espiritual",
-      "Explica el misterio de la unidad",
+      "Diana era la diosa principal de esta ciudad",
+      "Pablo permaneció dos años enseñando aquí",
+      "La carta menciona una armadura completa",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -441,7 +458,7 @@ const palabras = [
     id: 18,
     word: "sinedrin",
     generalPhrase:
-      "Un grupo de poder que influyó en momentos cruciales de la historia",
+      "Un concilio antiguo que ejercía autoridad sobre asuntos cruciales",
     lettersVisible: [
       { position: 0, letter: "s" },
       { position: 5, letter: "r" },
@@ -451,9 +468,9 @@ const palabras = [
     category: "medium",
     type: "concepto",
     hints: [
-      "Setenta ancianos formaban parte",
-      "El sumo sacerdote lo presidía",
-      "Se reunían en la cámara de piedras talladas",
+      "Su número recordaba a los que ayudaron a Moisés",
+      "Se reunían en el área del templo",
+      "Caifás presidió una de sus reuniones más famosas",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
@@ -468,8 +485,7 @@ const palabras = [
   {
     id: 19,
     word: "cedron",
-    generalPhrase:
-      "Un lugar que fue testigo de momentos importantes en la historia de reyes y profetas",
+    generalPhrase: "Un valle que ha sido testigo silencioso de muchas lágrimas",
     lettersVisible: [
       { position: 0, letter: "c" },
       { position: 4, letter: "n" },
@@ -479,9 +495,9 @@ const palabras = [
     category: "medium",
     type: "lugar",
     hints: [
-      "Valle que separa dos lugares santos",
-      "David lo cruzó en un momento de tristeza",
-      "Sus aguas corrían negras en temporada de lluvia",
+      "Un rey lo cruzó descalzo y llorando",
+      "Separa el monte del templo del Monte de los Olivos",
+      "Sus aguas turbias fluían entre jardines antiguos",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 2 },
@@ -497,7 +513,7 @@ const palabras = [
     id: 20,
     word: "gehenna",
     generalPhrase:
-      "Un término que se convirtió en metáfora de un destino temido",
+      "Un lugar terrenal que se convirtió en símbolo de juicio eterno",
     lettersVisible: [
       { position: 0, letter: "g" },
       { position: 4, letter: "n" },
@@ -507,12 +523,141 @@ const palabras = [
     category: "hard",
     type: "lugar",
     hints: [
-      "Valle al sur de una ciudad antigua",
-      "Lugar de rituales paganos prohibidos",
-      "Se convirtió en vertedero de la ciudad",
+      "Valle donde algunos reyes ofrecieron sacrificios prohibidos",
+      "El rey Josías lo convirtió en lugar inmundo",
+      "Jesús usó este lugar como metáfora en sus enseñanzas",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 3 },
+      { type: "pistaAdicional", quantity: 2 },
+      { type: "revelarLetra", quantity: 1 },
+    ],
+    difficulty: {
+      level: "hard",
+      basePoints: 4,
+    },
+  },
+  {
+    id: 21,
+    word: "eden",
+    generalPhrase: "El primer hogar de la humanidad, perdido por una decisión",
+    lettersVisible: [{ position: 0, letter: "e" }],
+    length: 4,
+    maxAttempts: 5,
+    category: "medium",
+    type: "lugar",
+    hints: [
+      "Cuatro ríos lo regaban",
+      "Contenía dos árboles especiales",
+      "Un querubín guardó su entrada",
+    ],
+    availableBenefits: [
+      { type: "decirLetra", quantity: 2 },
+      { type: "pistaAdicional", quantity: 2 },
+      { type: "revelarLetra", quantity: 1 },
+    ],
+    difficulty: {
+      level: "medium",
+      basePoints: 2,
+    },
+  },
+  {
+    id: 22,
+    word: "filadelfia",
+    generalPhrase: "Una de las siete que recibió elogios sin reproche",
+    lettersVisible: [
+      { position: 0, letter: "f" },
+      { position: 4, letter: "d" },
+    ],
+    length: 10,
+    maxAttempts: 8,
+    category: "hard",
+    type: "lugar",
+    hints: [
+      "Se le prometió una puerta abierta",
+      "Su nombre significa amor fraternal",
+      "Se le prometió protección de la hora de prueba",
+    ],
+    availableBenefits: [
+      { type: "decirLetra", quantity: 3 },
+      { type: "pistaAdicional", quantity: 2 },
+      { type: "revelarLetra", quantity: 1 },
+    ],
+    difficulty: {
+      level: "hard",
+      basePoints: 4,
+    },
+  },
+  {
+    id: 23,
+    word: "leviatan",
+    generalPhrase: "Una criatura misteriosa que simboliza poder indomable",
+    lettersVisible: [
+      { position: 0, letter: "l" },
+      { position: 5, letter: "a" },
+    ],
+    length: 8,
+    maxAttempts: 7,
+    category: "hard",
+    type: "concepto",
+    hints: [
+      "Descrito en detalle en el libro de Job",
+      "Se dice que respira fuego",
+      "Símbolo del poder sobre el mar",
+    ],
+    availableBenefits: [
+      { type: "decirLetra", quantity: 3 },
+      { type: "pistaAdicional", quantity: 2 },
+      { type: "revelarLetra", quantity: 1 },
+    ],
+    difficulty: {
+      level: "hard",
+      basePoints: 4,
+    },
+  },
+  {
+    id: 24,
+    word: "carmelo",
+    generalPhrase: "Monte donde el fuego respondió a un desafío",
+    lettersVisible: [
+      { position: 0, letter: "c" },
+      { position: 4, letter: "e" },
+    ],
+    length: 7,
+    maxAttempts: 6,
+    category: "medium",
+    type: "lugar",
+    hints: [
+      "Escenario de un duelo espiritual",
+      "450 contra 1 en sus laderas",
+      "Un altar reparado con 12 piedras",
+    ],
+    availableBenefits: [
+      { type: "decirLetra", quantity: 2 },
+      { type: "pistaAdicional", quantity: 2 },
+      { type: "revelarLetra", quantity: 1 },
+    ],
+    difficulty: {
+      level: "medium",
+      basePoints: 3,
+    },
+  },
+  {
+    id: 25,
+    word: "urim",
+    generalPhrase: "Objeto sagrado usado para discernir la voluntad divina",
+    lettersVisible: [{ position: 0, letter: "u" }],
+    length: 4,
+    maxAttempts: 5,
+    category: "hard",
+    type: "objeto",
+    hints: [
+      "Guardado en el pectoral del sumo sacerdote",
+      "Tenía un compañero llamado Tumim",
+      "Herramienta de decisión sacerdotal",
+    ],
+    availableBenefits: [
+      { type: "decirLetra", quantity: 2 },
       { type: "pistaAdicional", quantity: 2 },
       { type: "revelarLetra", quantity: 1 },
     ],
