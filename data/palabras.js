@@ -107,7 +107,7 @@ const palabras = [
     hints: [
       "El menor de ocho hermanos",
       "Músico en la corte real",
-      "De pastor a monarca",
+      "De pastor a rey",
     ],
     availableBenefits: [
       { type: "decirLetra", quantity: 2 },

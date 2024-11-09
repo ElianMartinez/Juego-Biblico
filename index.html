@@ -1,19 +1,116 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Juego Bíblico - Descifra la Palabra</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Enlazar el CSS de Tailwind -->
+    <!-- Fuentes y estilos -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/tailwind.css" rel="stylesheet" />
+    <style>
+      * {
+        font-family: "Nunito", sans-serif;
+      }
+
+      .game-gradient {
+        background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      }
+
+      .team-card {
+        background: white;
+        /* Eliminamos transparencia y filtros */
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .letter-box {
+        width: 100px; /* Aumentamos el tamaño */
+        height: 100px;
+        font-size: 4rem; /* Aumentamos el tamaño de la fuente */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        border-bottom: 4px solid #4b5563;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .benefit-card {
+        background: #667eea; /* Usamos un color sólido */
+        transition: transform 0.3s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .game-button {
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Eliminamos transparencia */
+      }
+
+      .game-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .modal-content {
+        animation: modalFade 0.3s ease-out;
+      }
+
+      @keyframes modalFade {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Nuevos estilos para ajustar el layout */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .main-content {
+        flex: 1;
+        max-width: 60%; /* Ocupa el 60% del ancho */
+      }
+
+      .sidebar {
+        flex: 1;
+        max-width: 35%; /* Ocupa el 35% del ancho */
+        margin-left: 2%;
+      }
+
+      .pistas {
+        font-size: 2rem; /* Aumentamos tamaño de fuente */
+      }
+
+      .modal-content {
+        max-width: 800px; /* Aumentamos el ancho del modal */
+      }
+    </style>
   </head>
-  <body id="body" class="text-gray-800 min-h-screen flex items-center">
-    <div id="app" class="container mx-auto p-4">
-      <!-- Contenido dinámico del juego se cargará aquí -->
+  <body id="body" class="min-h-screen overflow-x-hidden">
+    <!-- Contenido principal -->
+    <div id="app" class="w-full min-h-screen p-8">
+      <!-- El contenido dinámico se insertará aquí -->
     </div>
 
-    <!-- Contenedor para Modales -->
+    <!-- Modales -->
     <div id="modalContainer"></div>
 
     <!-- Scripts -->
